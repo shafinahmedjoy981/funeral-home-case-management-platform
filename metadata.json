@@ -1,0 +1,6 @@
+{
+  "name": "Aurel - Funeral Home Case Management",
+  "description": "A calm, dignified, and FTC compliance-safe case management platform for independent funeral homes and grieving families.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

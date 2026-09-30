@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-slate-blue: #3E5C76;
+  --color-slate-blue-light: #50718e;
+  --color-slate-blue-dark: #2d4559;
+  --color-gold-muted: #C4A35A;
+  --color-gold-light: #dfc68b;
+  --color-gold-dark: #9c7f37;
+  --color-deep-ink: #1F2F3E;
+  --color-body-text: #2B3946;
+  --color-mist: #F4F7FA;
+  --color-ice: #E3EBF2;
+  --color-ivory: #FBF9F4;
+  --color-sage: #5E8C7A;
+  --color-amber-muted: #C98A2B;
+  --color-brick: #A6473F;
+}
+
+/* Base text sizing & smooth rendering */
+html {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  color: #2B3946;
+  background-color: #F4F7FA;
+}
+
+/* Large text toggle for elder-friendly readability */
+html.large-text {
+  font-size: 19px;
+}
+
+/* High contrast mode for accessibility */
+html.high-contrast {
+  --color-body-text: #111a24;
+  --color-deep-ink: #0b1219;
+  background-color: #ffffff;
+}
+
+html.high-contrast .crystal-card {
+  background: #ffffff !important;
+  border-color: #1F2F3E !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Crystal glassmorphism styling */
+.crystal-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 32px -4px rgba(31, 47, 62, 0.04), 0 1px 2px rgba(31, 47, 62, 0.02);
+}
+
+.crystal-card-gold {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(196, 163, 90, 0.35);
+  box-shadow: 0 12px 36px -6px rgba(31, 47, 62, 0.06), 0 0 0 1px rgba(196, 163, 90, 0.12);
+}
+
+.crystal-card-ivory {
+  background: rgba(251, 249, 244, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(196, 163, 90, 0.25);
+  box-shadow: 0 10px 30px -4px rgba(31, 47, 62, 0.04);
+}
+
+/* Subtle faceted crystal background accents */
+.crystal-facet-bg {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(196, 163, 90, 0.035) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(62, 92, 118, 0.04) 0px, transparent 50%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.6) 0%, rgba(244, 247, 250, 0.4) 100%);
+}
+
+/* Custom scrollbars that feel quiet and refined */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(62, 92, 118, 0.18);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(62, 92, 118, 0.32);
+}
+
+/* Print styles for FTC Statement and Price Lists */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .crystal-card {
+    border: 1px solid #cccccc !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+}
